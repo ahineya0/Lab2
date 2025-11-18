@@ -18,6 +18,11 @@ namespace PersonForm
             ToolType = toolType;
         }
 
+        public override string GetRole()
+        {
+            return base.GetRole() + " , Turner";
+        }
+
         public override string ToString()
         {
             return base.ToString() + $", Experience: {ExperienceYears} years, Tool type: {ToolType}";

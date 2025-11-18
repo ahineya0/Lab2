@@ -10,13 +10,17 @@ namespace PersonForm
     {
         public string major, faculty;
         
-        public Student(string name = "John", string surname = "Doe", int age = 18,
-                       decimal gpa = 0.0m, int year = 0, string placeOfStudy = "Unknown",
-                       string major = "Undeclared", string faculty = "General Studies")
+        public Student(string name, string surname, int age, decimal gpa, int year, 
+            string placeOfStudy, string major = "Undeclared", string faculty = "General Studies")
             : base(name, surname, age, gpa, year, placeOfStudy)
         {
             Major = major;
             Faculty = faculty;
+        }
+
+        public override string GetRole()
+        {
+            return base.GetRole() + ", Student";
         }
 
         public override string ToString()

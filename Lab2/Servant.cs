@@ -12,11 +12,16 @@ namespace PersonForm
         private string branch;
         private int servingFor;
 
-        public Servant(string name = "John", string surname = "Doe", int age = 18, string branch = "Army", int servingFor = 0)
+        public Servant(string name, string surname, int age, string branch = "Army", int servingFor = 0)
             : base(name, surname, age)
         {
             Branch = branch;
             ServingFor = servingFor;
+        }
+
+        public override string GetRole()
+        {
+            return "Servant";
         }
 
         public override string ToString()
@@ -35,6 +40,13 @@ namespace PersonForm
         {
             return HashCode.Combine(Name, Age, Branch, ServingFor);
         }
+
+        ~Servant()
+        {
+            Console.WriteLine($"Servant {Name} {Surname} is being finalized");
+        }
+
+        // Метод GetType() не переопределяется, так как он объявлен как sealed в классе Object и всегда возвращает точный тип времени выполнения
 
         public string Branch
         {

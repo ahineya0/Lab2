@@ -10,10 +10,15 @@ namespace PersonForm
     {
         private string company, jobTitle;
 
-        public Worker(string name, string surname,  int age, string company, string jobTitle) : base(name, surname, age)
+        public Worker(string name, string surname,  int age, string company = "UnknownCompany", string jobTitle = "Unknown") : base(name, surname, age)
         {
             Company = company;
             JobTitle = jobTitle;
+        }
+
+        public override string GetRole()
+        {
+            return "Worker";
         }
 
         public override string ToString()

@@ -8,21 +8,14 @@ namespace PasswordForm
 {
     public static class PasswordHelper
     {
-
-        public static char GetMediumChar(this Password pw)
+        public static char GetMediumChar(this string str)
         {
-            if (string.IsNullOrEmpty(pw.Pword))
-            {
-                throw new InvalidOperationException("Пароль пустой");
-            }
-            if (pw.Pword.Length % 2 == 0)
-            {
-                return pw.Pword[(pw.Pword.Length / 2) - 1];
-            }
+            if (string.IsNullOrEmpty(str))
+                throw new InvalidOperationException("Строка пустая");
+            if (str.Length % 2 == 0)
+                return str[(str.Length / 2) - 1];
             else
-            {
-                return pw.Pword[pw.Pword.Length / 2];
-            }
+                return str[str.Length / 2];
         }
 
         public static bool CorrectLength(this Password pw)

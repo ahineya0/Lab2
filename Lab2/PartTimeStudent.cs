@@ -10,13 +10,16 @@ namespace PersonForm
     {
         private int workHoursPerWeek;
 
-        public PartTimeStudent(string name = "John", string surname = "Doe", int age = 18,
-                               decimal gpa = 0.0m, int year = 0, string placeOfStudy = "Unknown",
-                               string major = "Undeclared", string faculty = "General Studies",
-                               int workHoursPerWeek = 20)
+        public PartTimeStudent(string name, string surname, int age, decimal gpa, int year, 
+            string placeOfStudy, string major, string faculty,int workHoursPerWeek = 20)
             : base(name, surname, age, gpa, year, placeOfStudy, major, faculty)
         {
             WorkHoursPerWeek = workHoursPerWeek;
+        }
+
+        public override string GetRole()
+        {
+            return base.GetRole() + ", but part-time student";
         }
 
         public override string ToString()

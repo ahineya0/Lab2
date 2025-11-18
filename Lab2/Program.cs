@@ -1,5 +1,6 @@
 ﻿using PasswordForm;
 using PersonForm;
+using System;
 
 
 namespace Lab2
@@ -55,9 +56,11 @@ namespace Lab2
                         else
                             Console.WriteLine("Пароль не стойкий");
 
-                        Console.WriteLine("\nПолучение среднего символа пароля");
-                        Console.WriteLine($"Пароль: {pass1.Pword}\nЕго средний символ: {pass1.GetMediumChar()}");
-                        Console.WriteLine($"Пароль: {pass2.Pword}\nЕго средний символ: {pass2.GetMediumChar()}");
+                        Console.WriteLine("\nПолучение среднего символа строки");
+                        string str1 = "Hello, World";
+                        string str2 = "Goodbye, World";
+                        Console.WriteLine($"Строка: {str1}\nЕё средний символ: {str1.GetMediumChar()}");
+                        Console.WriteLine($"Строка: {str2}\nЕё средний символ: {str2.GetMediumChar()}");
 
                         Console.WriteLine("\nПроверка допустимой длины");
                         Console.WriteLine($"Пароль: {pass1.Pword}");
@@ -73,7 +76,7 @@ namespace Lab2
                     try
                     {
                         Person[] people =
-                            {
+                        {
                             new Servant("Alex", "Smith", 20, "Marine", 2),
                             new Learner("Bob", "Johnson", 22, 3.5m, 2, "University"),
                             new Worker("Charlie", "Brown", 40, "Eltex", "Engineer"),
@@ -82,6 +85,9 @@ namespace Lab2
                             new PartTimeStudent("Frank", "Miller", 25, 3.8m, 3, "Institute", "Mathematics", "Science", 25),
                             new Programmer("Grace", "Lee", 28, "TechCorp", "Developer", "Java", 5)
                         };
+
+                        Console.WriteLine($"Узнаем, кем является {people[6].Name}");
+                        Console.WriteLine(people[6].GetRole());
 
                         foreach (var person in people)
                         {
@@ -96,6 +102,7 @@ namespace Lab2
                             ? "\nПервый и второй солдаты равны"
                             : "\nПервый и второй солдаты не равны");
 
+                        Console.WriteLine($"\nХэш-код у {people[0].Name}:");
                         Console.WriteLine(people[0].GetHashCode());
                     }
                     catch (ArgumentException ex)
@@ -104,10 +111,6 @@ namespace Lab2
                     }
                     break;
             }
-                
-
-
-            
         }
     }
 }

@@ -19,6 +19,11 @@ namespace PersonForm
             ProjectsCompleted = projectsCompleted;
         }
 
+        public override string GetRole()
+        {
+            return base.GetRole() + ", Programmer";
+        }
+
         public override string ToString()
         {
             return base.ToString() + $", Programming language: {ProgrammingLanguage}, Projects completed: {ProjectsCompleted}";

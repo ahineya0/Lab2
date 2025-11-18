@@ -19,9 +19,14 @@ namespace PersonForm
             Age = age;
         }
 
+        public virtual string GetRole()
+        {
+            return "No information";
+        }
+
         public override string ToString()
         {
-            return $"{GetType().Name} -> Name: {Name}, Surname: {Surname}, Age: {Age}";
+            return $"{GetType().Name} Name: {Name}, Surname: {Surname}, Age: {Age}";
         }
 
         public string Name

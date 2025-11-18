@@ -14,14 +14,18 @@ namespace PersonForm
         private int year;
         private string placeOfStudy;
 
-
-        public Learner(string name = "John", string surname = "Doe", int age = 18,
+        public Learner(string name, string surname, int age,
                        decimal gpa = 0.0m, int year = 0, string placeOfStudy = "Unknown")
             : base(name, surname, age)
         {
             Gpa = gpa;
             Year = year;
             PlaceOfStudy = placeOfStudy;
+        }
+
+        public override string GetRole()
+        {
+            return "Learner";
         }
 
         public override string ToString()
